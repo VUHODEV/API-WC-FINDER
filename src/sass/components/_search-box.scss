@@ -1,0 +1,23 @@
+.search-box {
+  margin: $spacing-lg 0;
+  @include flex-center;
+  gap: $spacing-sm;
+  background: white;
+  padding: $spacing-md;
+  border-radius: $border-radius;
+  @include box-shadow;
+
+  #search-input {
+    flex: 1;
+    padding: $spacing-md;
+    border: 2px solid $border-color;
+    border-radius: $border-radius-sm;
+    font-size: 16px;
+    @include transition(border-color);
+
+    &:focus {
+      border-color: $primary-color;
+      outline: none;
+    }
+  }
+}

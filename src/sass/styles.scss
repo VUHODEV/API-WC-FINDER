@@ -1,0 +1,69 @@
+// Import các module
+@import "variables";
+@import "mixins";
+@import "animations";
+@import "base";
+@import "components";
+@import "./components/search-box";
+@import "./components/map";
+@import "./components/loading";
+@import "./components/error";
+@import "./components/wc-list";
+@import "./components/info-window";
+// Container
+
+// Container
+.container {
+  max-width: $desktop;
+  margin: 0 auto;
+  padding: $spacing-lg;
+}
+
+// Media Queries
+@include tablet {
+  .container {
+    width: 95%;
+    margin: $spacing-sm;
+    padding: $spacing-md;
+  }
+
+  #map,
+  .search-box,
+  #wc-list {
+    width: 95%;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  .search-box {
+    flex-direction: column;
+    gap: $spacing-sm;
+  }
+
+  button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  #map {
+    height: 400px;
+  }
+
+  .wc-item {
+    flex-direction: column;
+    gap: $spacing-sm;
+    text-align: center;
+  }
+}
+
+@include mobile {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  #map {
+    height: 300px;
+  }
+}

@@ -1,0 +1,70 @@
+// Container
+.container {
+  max-width: 400px;
+  width: 85%;
+  margin: $spacing-md auto;
+  padding: $spacing-md;
+  background-color: rgba($white, 0.3);
+  backdrop-filter: blur(5px);
+  border-radius: $border-radius-lg;
+  box-shadow: $shadow-md;
+}
+
+// Search Box
+.search-box {
+  width: 95%;
+  margin: $spacing-sm auto;
+  display: flex;
+  gap: $spacing-xs;
+  padding: $spacing-sm;
+  border-radius: $border-radius-sm;
+
+  input {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  button {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+}
+
+// Map
+#map {
+  height: 280px;
+  width: 95%;
+  margin: $spacing-sm auto;
+  border-radius: $border-radius-md;
+}
+
+// WC List
+#wc-list {
+  width: 95%;
+  margin: $spacing-sm auto;
+  padding: $spacing-sm;
+  max-height: 300px;
+  font-size: 14px;
+}
+
+// Title
+h1 {
+  font-size: 1.5rem;
+  margin: $spacing-sm 0;
+}
+
+// WC Items
+.wc-item {
+  padding: $spacing-sm;
+  margin-bottom: $spacing-sm;
+
+  .wc-name {
+    font-size: 15px;
+  }
+
+  .wc-address {
+    font-size: 13px;
+  }
+}
+
+// ... (các component khác)

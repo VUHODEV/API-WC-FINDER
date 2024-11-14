@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Map WC Locations</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol/dist/L.Control.Locate.min.css"
+    />
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol/dist/L.Control.Locate.min.js"></script>
+    <meta name="description" content="Tìm kiếm nhà vệ sinh công cộng gần bạn" />
+    <meta name="keywords" content="nhà vệ sinh, wc công cộng, toilet finder" />
+    <meta name="author" content="Your Name" />
+    <meta property="og:title" content="WC Finder" />
+    <meta
+      property="og:description"
+      content="Tìm kiếm nhà vệ sinh công cộng gần bạn"
+    />
+    <meta property="og:type" content="website" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <style>
+      body {
+        background-image: url("./images/background.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: fixed;
+      }
+
+      /* Thay đổi container để có độ trong suốt cao hơn */
+      .container {
+        background-color: rgba(255, 255, 255, 0.3); /* Giảm độ đục xuống */
+        backdrop-filter: blur(5px); /* Thêm hiệu ứng blur */
+        padding: 20px;
+        border-radius: 10px;
+        margin: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Điều chỉnh màu chữ để dễ đọc hơn */
+      h1 {
+        color: #333;
+        text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+      }
+
+      /* Điều chỉnh các phần tử con trong container */
+      #map,
+      .search-box,
+      #wc-list {
+        background-color: rgba(
+          255,
+          255,
+          255,
+          0.7
+        ); /* Giữ độ đục cao hơn cho các phần tử chức năng */
+        border-radius: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>WC FINDER</h1>
+
+      <!-- Loading indicator -->
+      <div id="loading" class="loading-spinner" style="display: none">
+        Đang tải...
+      </div>
+
+      <!-- Error message -->
+      <div id="error-message" class="error-message" style="display: none"></div>
+
+      <div class="search-box">
+        <input
+          type="text"
+          id="search-input"
+          placeholder="Tìm kiếm địa điểm..."
+          autocomplete="off"
+        />
+        <button onclick="findNearbyWC()" id="search-button">
+          <i class="fas fa-search"></i> Tìm nhà vệ sinh gần đây
+        </button>
+      </div>
+
+      <div id="map" style="height: 400px; width: 100%"></div>
+      <div id="wc-list"></div>
+    </div>
+
+    <!-- Font Awesome for icons -->
+    <script src="https://kit.fontawesome.com/your-kit-code.js"></script>
+
+    <!-- Main JavaScript -->
+    <script src="app.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        initMap();
+      });
+    </script>
+  </body>
+</html>

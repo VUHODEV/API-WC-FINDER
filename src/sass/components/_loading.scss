@@ -1,0 +1,21 @@
+.loading-spinner {
+  text-align: center;
+  padding: $spacing-md;
+  background-color: #f8f9fa;
+  border-radius: $border-radius-sm;
+  margin: $spacing-sm 0;
+  @include box-shadow;
+  animation: pulse 1.5s infinite;
+
+  &::after {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-left: $spacing-sm;
+    border: 3px solid $primary-color;
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: spin 1s linear infinite;
+  }
+}

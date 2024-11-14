@@ -1,0 +1,63 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  line-height: 1.6;
+  color: $text-primary;
+  background-image: linear-gradient(
+      135deg,
+      rgba(245, 247, 250, 0.8) 0%,
+      rgba(195, 207, 226, 0.8) 100%
+    ),
+    url("../images/background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: $spacing-sm;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  text-align: center;
+  color: $text-primary;
+  margin-bottom: $spacing-lg;
+  font-size: 2.5rem;
+}
+
+button {
+  padding: $spacing-md $spacing-lg;
+  background-color: $primary-color;
+  color: white;
+  border: none;
+  border-radius: $border-radius-sm;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  @include transition;
+  @include flex-center;
+  gap: $spacing-sm;
+
+  &:hover {
+    background-color: darken($primary-color, 5%);
+    transform: translateY(-1px);
+    @include box-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+
+  &:disabled {
+    background-color: $disabled-color;
+    cursor: not-allowed;
+  }
+}

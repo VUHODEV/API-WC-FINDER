@@ -1,0 +1,21 @@
+.info-window {
+  padding: $spacing-sm;
+  max-width: 300px;
+
+  h3 {
+    margin: 0 0 $spacing-sm;
+    color: $heading-color;
+  }
+
+  p {
+    margin: $spacing-xs 0;
+    color: lighten($text-color, 20%);
+  }
+}
+
+.no-results {
+  padding: $spacing-lg;
+  text-align: center;
+  color: lighten($text-color, 20%);
+  font-style: italic;
+}

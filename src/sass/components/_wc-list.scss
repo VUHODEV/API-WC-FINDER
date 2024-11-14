@@ -1,0 +1,42 @@
+#wc-list {
+  padding: $spacing-lg;
+  background-color: white;
+  border-radius: $border-radius;
+  @include box-shadow;
+}
+
+.wc-item {
+  padding: $spacing-md;
+  border-bottom: 1px solid $border-color;
+  @include flex-between;
+  cursor: pointer;
+  @include transition(background-color);
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  &:hover {
+    background-color: darken(white, 3%);
+  }
+
+  .wc-info {
+    flex: 1;
+
+    .wc-name {
+      font-weight: bold;
+      color: $heading-color;
+      margin-bottom: $spacing-xs;
+    }
+
+    .wc-address {
+      color: lighten($text-color, 20%);
+      font-size: 14px;
+    }
+  }
+
+  .wc-rating {
+    color: $warning-color;
+    font-weight: bold;
+  }
+}

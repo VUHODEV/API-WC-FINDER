@@ -1,0 +1,21 @@
+.error-message {
+  padding: $spacing-md;
+  background-color: lighten($error-color, 45%);
+  color: $error-color;
+  border-left: 4px solid $error-color;
+  border-radius: $border-radius-sm;
+  margin: $spacing-sm 0;
+  @include flex-center;
+  @include box-shadow;
+  animation: slideIn 0.3s ease-out;
+
+  &::before {
+    content: "⚠";
+    margin-right: $spacing-sm;
+    font-size: 1.2em;
+  }
+
+  &:hover {
+    background-color: lighten($error-color, 42%);
+  }
+}
