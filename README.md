@@ -8,9 +8,3 @@
 - **Tích hợp Google Maps API**: Sử dụng Google Maps để hiển thị địa điểm, hướng dẫn đường đi và cung cấp thông tin chi tiết về các nhà vệ sinh công cộng.
 - **Thông tin chi tiết**: Cung cấp thêm các thông tin như địa chỉ, giờ mở cửa và tiện ích đi kèm (nếu có).
 
-## Cài đặt
-
-1. **Clone** repository về máy của bạn:
-   ```bash
-   git clone https://github.com/username/wc-finder-app.git
-   ```
