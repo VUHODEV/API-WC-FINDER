@@ -1,11 +1,14 @@
 /* Điều chỉnh container chính */
 .container {
-  min-height: 100vh; /* Chiều cao tối thiểu bằng viewport */
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 20px;
-  margin-top: 0; /* Bỏ margin-top */
+  width: 1200px;
+  position: absolute;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 /* Style cho form đăng nhập */
