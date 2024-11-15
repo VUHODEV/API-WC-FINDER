@@ -1,0 +1,195 @@
+/* Điều chỉnh container chính */
+.container {
+  min-height: 100vh; /* Chiều cao tối thiểu bằng viewport */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  margin-top: 0; /* Bỏ margin-top */
+}
+
+/* Style cho form đăng nhập */
+.login-form,
+.register-form {
+  width: 100%;
+  max-width: 400px;
+  background: transparent;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  margin: 0; /* Bỏ margin */
+}
+
+/* Điều chỉnh nav menu */
+.nav-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+}
+
+/* Thêm padding-top cho body để tránh nav menu che content */
+body {
+  background-image: url("../images/background.jpg");
+  background-size: cover;
+  background-position-y: -80px;
+}
+#wrapper {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.social-login {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.social-btn {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+
+.social-btn.google {
+  background: #fff;
+  border: 1px solid #ddd;
+  color: #444;
+}
+
+.social-btn.facebook {
+  background: #1877f2;
+  color: white;
+}
+
+.divider {
+  text-align: center;
+  margin: 20px 0;
+  position: relative;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 45%;
+  height: 1px;
+  background: #ddd;
+}
+
+.divider::before {
+  left: 0;
+}
+.divider::after {
+  right: 0;
+}
+
+.divider span {
+  background: white;
+  padding: 0 10px;
+  color: #666;
+  font-size: 14px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #555;
+}
+
+.password-input {
+  position: relative;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #666;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.error-message {
+  color: #f44336;
+  font-size: 12px;
+  margin-top: 5px;
+  display: none;
+}
+
+.form-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 15px 0;
+}
+
+.remember-me {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #666;
+}
+
+.forgot-password {
+  color: #2196f3;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.login-btn,
+.register-btn {
+  width: 100%;
+  padding: 12px;
+  background: #2196f3;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.login-btn:hover,
+.register-btn:hover {
+  background: #1976d2;
+}
+
+.register-link,
+.login-link {
+  text-align: center;
+  margin-top: 20px;
+  color: #666;
+}
+
+.register-link a,
+.login-link a {
+  color: #2196f3;
+  text-decoration: none;
+  font-weight: 500;
+}

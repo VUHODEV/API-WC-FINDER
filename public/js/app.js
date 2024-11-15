@@ -1,6 +1,7 @@
 let map;
 let markers = [];
 let favoriteLocations = JSON.parse(localStorage.getItem("favoriteWC") || "[]");
+let routingControl;
 
 function initMap() {
   if (map) {
@@ -11,6 +12,10 @@ function initMap() {
     const saigon = [10.8459, 106.7921];
 
     map = L.map("map").setView(saigon, 15);
+
+    if (!map) {
+      throw new Error("Không thể khởi tạo map");
+    }
 
     L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
       attribution: "© OpenStreetMap contributors",
@@ -33,6 +38,9 @@ function initMap() {
     console.error("Error initializing map:", error);
     showError("Không thể khởi tạo bản đồ: " + error.message);
   }
+
+  console.log("Map element:", document.getElementById("map"));
+  console.log("Map object:", map);
 }
 
 const mockLocations = [
@@ -434,4 +442,42 @@ function showNotification(message, type = "success") {
       setTimeout(() => notification.remove(), 300);
     }, 2000);
   }, 100);
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  console.log("DOM loaded");
+  try {
+    initMap();
+    console.log("Map initialized successfully");
+  } catch (error) {
+    console.error("Error in initMap:", error);
+  }
+});
+
+// Tạo đường đi từ vị trí hiện tại đến điểm đích
+function createRoute(destLat, destLng) {
+  if (!window.userLocation) {
+    alert("Vui lòng bật định vị để xem đường đi");
+    return;
+  }
+
+  // Xóa route cũ nếu có
+  if (routingControl) {
+    map.removeControl(routingControl);
+  }
+
+  // Tạo route mới
+  routingControl = L.Routing.control({
+    waypoints: [
+      L.latLng(window.userLocation[0], window.userLocation[1]), // Điểm bắt đầu
+      L.latLng(destLat, destLng), // Điểm đích
+    ],
+    routeWhileDragging: true,
+    lineOptions: {
+      styles: [{ color: "#2196F3", weight: 4 }], // Style cho đường đi
+    },
+    show: false, // Ẩn bảng chỉ đường
+    addWaypoints: false, // Không cho thêm điểm dừng
+    draggableWaypoints: false, // Không cho kéo thả điểm
+  }).addTo(map);
 }
